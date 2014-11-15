@@ -74,7 +74,7 @@ public class Loginv2 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 51));
 
         jLabel1.setText("Username");
 
