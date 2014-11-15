@@ -240,8 +240,8 @@ public class Loginv2 extends javax.swing.JFrame {
                
                   if(myUsername.equals(username) && myPass.equals(password) && myUsername.length() != 0 && myPass.length() != 0){
                      JOptionPane.showMessageDialog(this, "Welcome " + username +"!"); //added to display name
-//                     MainWindow showMain = new MainWindow();
-//                     showMain.setVisible(true);
+                     ResetPassForm chPass = new ResetPassForm();
+                     chPass.setVisible(true);
 //                     showMain.account_status.setText("Logged in as: " + username.toUpperCase());
 //                     showMain.account_status.setBackground(Color.green);
                      this.setVisible(false);
