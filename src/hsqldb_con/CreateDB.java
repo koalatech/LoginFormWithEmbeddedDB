@@ -18,6 +18,7 @@ public class CreateDB {
            Class.forName("org.hsqldb.jdbcDriver"); 
            con =  DriverManager.getConnection("jdbc:hsqldb:file:testdb;", "SA", "");
            st = con.createStatement();
+           
            //Create table
            con.createStatement().execute("create table accounts("
                                         + "username varchar(20),"
@@ -60,5 +61,6 @@ public class CreateDB {
     public static void main(String [] args){
         CreateDB t =new CreateDB();
         t.selectData();
+        System.out.println("My Change");
     }
 }
