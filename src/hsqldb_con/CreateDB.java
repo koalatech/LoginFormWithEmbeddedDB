@@ -26,7 +26,7 @@ public class CreateDB {
            
            //Insert data to table
            con.createStatement().execute("insert into accounts values "
-                                         + "('administrator','12345'),"
+                                         + "('admin','admin'),"
                                          + "('user','pass')");
            
         //   con.close();
