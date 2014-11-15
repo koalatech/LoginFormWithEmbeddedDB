@@ -68,6 +68,7 @@ public class Loginv2 extends javax.swing.JFrame {
         reg_lbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Test");
         setUndecorated(true);
         setResizable(false);
 
