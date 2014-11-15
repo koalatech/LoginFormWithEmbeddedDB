@@ -74,6 +74,8 @@ public class Loginv2 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
+        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+
         jLabel1.setText("Username");
 
         uname_box.addKeyListener(new java.awt.event.KeyAdapter() {
