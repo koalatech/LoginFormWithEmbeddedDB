@@ -16,43 +16,48 @@ public class InitializeDB {
            con =  DriverManager.getConnection(JDBC_URL);
            st = con.createStatement();
            
-           //Create table
-           con.createStatement().execute("create table accounts("
-                                        + "username varchar(20),"
-                                        + "password varchar(20))");
+          
            
            //Insert data to table
            con.createStatement().execute("insert into accounts values "
                                          + "('admin','admin')");
                                    
-           
+        
         //   con.close();
         }catch(Exception ex){
             System.out.println("ERROR: " + ex);
         }
     }
-       public void selectData(){
-            try{
-                String select_query = "select * from accounts";
+    
+   public void createTable()throws SQLException{
+        //Create table
+           con.createStatement().execute("create table accounts("
+                                        + "username varchar(20),"
+                                        + "password varchar(20))");
+   }
+    
+   public void selectData(){
+        try{
+            String select_query = "select * from accounts";
 
-                System.out.println("Records from Database: ");
-                  rs = st.executeQuery(select_query);
+            System.out.println("Records from Database: ");
+              rs = st.executeQuery(select_query);
 
-                  while(rs.next()){
+              while(rs.next()){
 
-                       String username = rs.getString("username");
-                       String password = rs.getString("password");
-       
-                
+                   String username = rs.getString("username");
+                   String password = rs.getString("password");
 
-                       System.out.println("Username: " + username);
-                       System.out.println("Password: " + password);
-                 }//end of while
 
-            }catch(Exception ex){
-                System.out.println(ex);
-            }//end of catch
-        } 
+
+                   System.out.println("Username: " + username);
+                   System.out.println("Password: " + password);
+             }//end of while
+
+        }catch(Exception ex){
+            System.out.println(ex);
+        }//end of catch
+    } 
     
     
     public static void main(String [] args){
