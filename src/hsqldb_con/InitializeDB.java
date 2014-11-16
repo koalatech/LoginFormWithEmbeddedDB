@@ -1,11 +1,6 @@
 package hsqldb_con;
-
-//import com.sun.corba.se.impl.util.Version;
-
-//import java.util.logging.Logger;
 import java.sql.*;
 
-import java.sql.*; //package to handle SQL Statements
 public class InitializeDB {
     public Connection con;
     public Statement st;
@@ -14,9 +9,11 @@ public class InitializeDB {
     
     
     public InitializeDB(){
+        final String DRIVER = "org.hsqldb.jdbcDriver";
+        final String JDBC_URL = "jdbc:hsqldb:file:testdb;ifexists=true";
         try{
-           Class.forName("org.hsqldb.jdbcDriver"); 
-           con =  DriverManager.getConnection("jdbc:hsqldb:file:testdb;", "SA", "");
+           Class.forName(DRIVER); 
+           con =  DriverManager.getConnection(JDBC_URL);
            st = con.createStatement();
            
            //Create table
