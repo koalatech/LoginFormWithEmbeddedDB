@@ -1,22 +1,22 @@
 package hsqldb_con;
 
+//import com.sun.corba.se.impl.util.Version;
 
+//import java.util.logging.Logger;
 import java.sql.*;
 
-
+import java.sql.*; //package to handle SQL Statements
 public class InitializeDB {
     public Connection con;
-    public Statement st = null;
+    public Statement st;
     public PreparedStatement pst = null;
     public ResultSet rs;
     
     
     public InitializeDB(){
-        final String DRIVER = "org.hsqldb.jdbcDriver";
-        final String JDBC_URL = "jdbc:hsqldb:file:testdb;ifexists=true";
         try{
-           Class.forName(DRIVER); //load driver
-           con =  DriverManager.getConnection(JDBC_URL); //jdbc connection
+           Class.forName("org.hsqldb.jdbcDriver"); 
+           con =  DriverManager.getConnection("jdbc:hsqldb:file:testdb;", "SA", "");
            st = con.createStatement();
            
            //Create table
@@ -34,10 +34,6 @@ public class InitializeDB {
             System.out.println("ERROR: " + ex);
         }
     }
-    
-       public void createTable(String DBTableName){
-           
-       }
        public void selectData(){
             try{
                 String select_query = "select * from accounts";
