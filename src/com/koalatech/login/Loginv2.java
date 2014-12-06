@@ -6,7 +6,7 @@
 
 package com.koalatech.login;
 
-import hsqldb_con.CreateDB;
+import com.koalatech.db.InitializeDB;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -73,6 +73,8 @@ public class Loginv2 extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
 
         jLabel1.setText("Username");
 
@@ -204,7 +206,7 @@ public class Loginv2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     
     private void loginProcess(){
-        CreateDB login = new CreateDB(); //call DBConnect
+        InitializeDB login = new InitializeDB(); //call DBConnect
         
          try{
                 String select_query = "select * from accounts where "
@@ -238,8 +240,8 @@ public class Loginv2 extends javax.swing.JFrame {
                
                   if(myUsername.equals(username) && myPass.equals(password) && myUsername.length() != 0 && myPass.length() != 0){
                      JOptionPane.showMessageDialog(this, "Welcome " + username +"!"); //added to display name
-//                     MainWindow showMain = new MainWindow();
-//                     showMain.setVisible(true);
+                     ResetPassForm chPass = new ResetPassForm();
+                     chPass.setVisible(true);
 //                     showMain.account_status.setText("Logged in as: " + username.toUpperCase());
 //                     showMain.account_status.setBackground(Color.green);
                      this.setVisible(false);
@@ -330,7 +332,7 @@ public class Loginv2 extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
