@@ -6,7 +6,7 @@
 
 package com.koalatech.login;
 
-import hsqldb_con.CreateDB;
+import com.koalatech.db.InitializeDB;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -116,7 +116,7 @@ public class ResetPassForm extends javax.swing.JFrame {
 
     private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
         // TODO add your handling code here:
-        CreateDB resetPass = new CreateDB();
+        InitializeDB resetPass = new InitializeDB();
         try{
          
                

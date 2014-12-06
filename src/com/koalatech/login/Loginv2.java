@@ -6,7 +6,7 @@
 
 package com.koalatech.login;
 
-import hsqldb_con.CreateDB;
+import com.koalatech.db.InitializeDB;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -206,7 +206,7 @@ public class Loginv2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     
     private void loginProcess(){
-        CreateDB login = new CreateDB(); //call DBConnect
+        InitializeDB login = new InitializeDB(); //call DBConnect
         
          try{
                 String select_query = "select * from accounts where "
